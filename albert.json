@@ -1,28 +1,31 @@
+{"books": [{
+    "id":1,
+    "title": "Book #1 ---The Universe and Dr. Einstein",
+    "year": 2005,
+    "published": true
+
+},
 {
-    "books": [
-        {
-            "id": 1,
-            "title": "The Quantum Enigma",
-            "year": 2022,
-            "published": true
-        },
-        {
-            "id": 2,
-            "title": "Exploring the Cosmos: A Journey Through Space and Time",
-            "year": 2019,
-            "published": true
-        },
-        {
-            "id": 3,
-            "title": "Einstein's Unfinished Symphony: The Quest for a Unified Theory",
-            "year": 2020,
-            "published": false
-        },
-        {
-            "id": 4,
-            "title": "The Art of Solitude: Einstein's Reflections on Life and Science",
-            "year": 2015,
-            "published": true
-        }
-    ]
-}
+    "id":2,
+    "title": "Book #2 ---- Einstein on politics",
+    "year": 2013,
+    "published": true
+},
+{
+    "id":3,
+    "title": "Book #3 ---- Einstein versus the physical review",
+    "year": 2005,
+    "published": false
+},
+{
+    "id":4,
+    "title": "Book #4 --- Einstein on peace",
+    "year": 2017,
+    "published": true
+},
+  {
+    "id":6,
+    "title": "Book #6 --- Adding Book 6",
+    "year": 2017,
+    "published": true
+}]}
