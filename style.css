@@ -1,0 +1,509 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a subtle color scheme */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "nav nav nav nav"
+        "header header header header"
+        "persona papers hobbies books"
+        "blog blog blog blog"
+        "footer footer footer footer";
+    grid-gap: 10px;
+}
+
+/* Styles for Navigation Bar */
+nav {
+    grid-area: nav;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Styles for Persona Section */
+.section {
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    padding: 20px;
+}
+
+#persona {
+    grid-area: persona;
+}
+
+#persona h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.persona-content {
+    display: flex;
+    align-items: center;
+}
+
+.persona-img {
+    max-width: 500px;
+    height: 200px;
+    display: block;
+    margin-top: 20px;
+}
+
+#persona {
+    grid-area: persona;
+    background-image: url('images/bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.persona-text {
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+/* Styles for Papers Section */
+#papers {
+    grid-area: papers;
+    background-color: #e6e6e6;
+    background-image: url('images/bg22.jpg');
+}
+
+#papers h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.papers-slideshow {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add these styles to your existing CSS */
+/* Styles for previous and next buttons */
+.slideshow-controls button {
+    margin: 0 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: wheat;
+    border: 2px solid #333;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.slideshow-controls button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Styles for individual papers */
+.paper {
+    text-align: center;
+    margin-right: 20px;
+    color: black;
+    font-size: 25px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+/* Set fixed dimensions for the images within individual papers */
+.paper img {
+    max-width: 100%;
+    height: auto;
+    width: 250px;
+    height: 350px;
+}
+
+/* Center-align the previous and next buttons */
+.slideshow-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.slideshow-controls button {
+    margin: 0 10px;
+}
+
+/* Styles for Hobbies Section */
+#hobbies {
+    grid-area: hobbies;
+    background-color: #f9f9f9;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+/* For Regular (Non-Mobile) Version */
+/* For Regular (Non-Mobile) Version */
+@media (min-width: 601px) {
+    .image-collection-grid {
+        grid-template-columns: repeat(3, 1fr); /* Display 3 images in each row */
+    }
+
+    /* Adjust the width of individual image containers */
+    .image {
+        width: calc(33.33% - 20px); /* Calculate the width with spacing between images */
+        max-width: none; /* Remove the max-width for custom sizing */
+        height: auto; /* Allow the height to adjust automatically */
+    }
+
+    /* Adjust the width of the images inside the containers */
+    .image img {
+        max-width: 100%;
+        height: auto;
+        width: 100%; /* Make the image fill the container horizontally */
+    }
+}
+/* Styles for Image Collection Section */
+/* Styles for Image Collection Section */
+#image-collection {
+    grid-area: image-collection;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+#image-collection h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Default Styles for Desktop (Non-Mobile) Version */
+.image-collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+
+/* Adjust the style of individual image containers for desktop */
+.image {
+    border: 2px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: calc(33.33% - 20px); /* Distribute width for 3 columns with spacing */
+    height: auto;
+}
+
+/* Adjust the style of images inside the containers */
+.image img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+.image p {
+    margin-top: 10px;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    /* Display 2 images in each row for mobile version */
+    .image-collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px; /* Reduce the gap for mobile version */
+    }
+
+    /* Adjust the style of individual image containers for mobile */
+    .image {
+        width: calc(50% - 5px); /* Distribute width for 2 columns with spacing */
+    }
+}
+
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    /* Display 2 images in each row for mobile version */
+    .image-collection-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    /* Adjust the style of individual image containers for mobile */
+    .image {
+        width: calc(50% - 10px); /* Distribute width for 2 columns with spacing */
+    }
+}
+
+/* Default Styles for Desktop (Non-Mobile) Version */
+.image-collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Adjust the style of individual image containers for desktop */
+.image {
+    border: 2px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: calc(33.33% - 20px); /* Distribute width for 3 columns with spacing */
+    height: auto;
+}
+
+/* Adjust the style of images inside the containers */
+.image img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+.image p {
+    margin-top: 10px;
+}
+
+
+/* Adjust the style of individual image containers */
+.image {
+    border: 2px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: calc(33.33% - 20px); /* Distribute width for 3 columns with spacing */
+    height: auto;
+}
+
+/* Adjust the style of images inside the containers */
+.image img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+.image p {
+    margin-top: 10px;
+}
+
+
+
+#hobbies h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.hobbies-list {
+    list-style: none;
+    padding: 0;
+}
+
+.hobby {
+    border: 2px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: x-large;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.hobby p {
+    margin-bottom: 10px;
+}
+
+/* Style for hobby images */
+.hobby img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Add these styles to your existing CSS for hobby images */
+.hobbies-list img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Styles for Books Section */
+#books {
+    grid-area: books;
+    background-color: #e6e6e6;
+}
+
+#books h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.books-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.book {
+    margin: 10px;
+    text-align: center;
+}
+
+.book img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Add this CSS to your existing styles for the .book img element */
+.book img {
+    max-width: 100px;
+    max-height: 150px;
+}
+
+/* Styles for Blog Section */
+#blog {
+    grid-area: blog;
+    background-color: #eaeaea;
+}
+
+#blog h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Footer Styles */
+footer {
+    grid-area: footer;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    /* Add your mobile-specific styles here */
+    /* For example, you can stack navigation links vertically */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    /* For example, you can adjust the number of columns for hobbies and books */
+    #hobbies {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #books {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* You can also adjust the number of images in a row for image collections */
+    .image-collection-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/* Styles for Image Collection Section */
+#image-collection {
+    grid-area: image-collection;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+#image-collection h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Default Styles for Desktop (Non-Mobile) Version */
+.image-collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Adjust the style of individual image containers for desktop */
+.image {
+    border: 2px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: calc(33.33% - 20px); /* Distribute width for 3 columns with spacing */
+    height: auto;
+}
+
+/* Adjust the style of images inside the containers */
+.image img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+.image p {
+    margin-top: 10px;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    /* Display 2 images in each row for mobile version */
+    .image-collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px; /* Adjust the gap for mobile version */
+    }
+
+    /* Adjust the style of individual image containers for mobile */
+    .image {
+        width: calc(50% - 10px); /* Distribute width for 2 columns with spacing */
+    }
+}
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    /* Display 2 books in each row for mobile version */
+    .books-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /* Adjust the style of individual book containers for mobile */
+    .book {
+        width: calc(50% - 10px); /* Distribute width for 2 columns with spacing */
+    }
+}
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    /* Display 2 books in each row for mobile version */
+    .books-list .book {
+        width: 50%;
+        margin: 0;
+    }
+}
+
