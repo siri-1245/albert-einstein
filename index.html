@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Albert Einstein's Website</title>
+</head>
+<body>
+    <div class="grid-container">
+        <nav class="grid-item">
+            <ul>
+                <li><a href="#persona">Persona</a></li>
+                <li><a href="#papers">Papers</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#image-collection">Image Collection</a></li> 
+                <li><a href="#books">Books</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+
+        <header class="grid-item">
+            <!-- Navigation links here -->
+        </header>
+
+        <main class="grid-item">
+            <section id="persona" class="section">
+                <div class="persona-header">
+                    <h2>Persona</h2>
+                </div>
+                <div class="persona-content">
+                    <img src="images/ai.png" alt="Albert Einstein" class="persona-img">
+                    <div class="persona-text">
+                        <p>I am Albert Einstein, a humble physicist who embarked<br>
+                             on a lifelong journey to 
+                            unravel the mysteries of the universe <br>
+                            through mathematics and scientific inquiry.</p>
+                    </div>
+                </div>
+            </section>
+            
+            
+            
+
+            <!-- Inside the Papers section -->
+            <section id="papers" class="section">
+                <h2>Papers</h2>
+                <div class="papers-slideshow">
+                    <div class="paper">
+                        <img src="images/hungarian_fingerprints.jpg" alt="Paper 1">
+                        <p>HUNGARIAN FINGERPRINTS.</p>
+                    </div>
+                    <div class="paper">
+                        <img src="images/2.jpg" alt="Paper 2">
+                        <p>A THEORY OF THE FOUNDATIONS OF THERMODYNAMICS</p>
+                    </div>
+                    <!-- Add more paper divs as needed -->
+                    <div class="paper">
+                        <img src="images/3.jpg" alt="Paper 3">
+                        <p>ON THE GENERAL MOLECULAR THEORY OF HEAT</p>
+                    </div>
+                    <div class="paper">
+                        <img src="images/4_relativity.jpg" alt="Paper 4">
+                        <p>RELATIVITY - THE SPECIAL AND THE GENERAL THEORY</p>
+                    </div>
+                </div>
+                <div class="slideshow-controls">
+                    <button onclick="previousSlide()">Previous</button>
+                    <button onclick="nextSlide()">Next</button>
+                </div>
+            </section>
+
+            <!-- Inside the Hobbies section -->
+<section id="hobbies" class="section">
+    <h2>Hobbies<br>
+    
+    </h2>
+    <ul class="hobbies-list">
+       
+    
+        <li class="hobby">
+            <p>Puzzles</p>
+            <img src="images/puzzles.jpeg" alt="Puzzle Image">
+        </li>
+        <li class="hobby">
+            <p>Reading Books</p>
+            <img src="images/reading.jpg" alt="Reading Image">
+        </li>
+        <li class="hobby">
+            <p>Playing Violin</p>
+            <img src="images/violin.png" alt="Violin Image">
+        </li>
+        <!-- Add more hobbies as needed -->
+    </ul>
+</section>
+<!-- Inside the Image Collection section -->
+<section id="image-collection" class="section">
+    <h2>Image Collection</h2>
+    <div class="image-collection-grid">
+        <!-- Add images and captions here -->
+        <div class="image">
+            <img src="images/ic1.jpg" alt="Einstein Image 1">
+            <p></p>
+        </div>
+        <div class="image">
+            <img src="images/ic2.jpg" alt="Einstein Image 2">
+            <p></p>
+        </div>
+        <!-- Add two more images and captions below -->
+        <div class="image">
+            <img src="images/ic3.jpeg" alt="Einstein Image 3">
+            <p></p>
+        </div>
+        <div class="image">
+            <img src="images/ic4.png" alt="Einstein Image 4">
+            <p></p>
+        </div>
+        <div class="image">
+            <img src="images/ic5.jpg" alt="Einstein Image 5">
+            <p></p>
+        </div>
+        <div class="image">
+            <img src="images/ic6.jpg" alt="Einstein Image 6">
+            <p></p>
+        </div>
+        <!-- Add more images and captions as needed -->
+    </div>
+</section>
+
+
+
+
+            <!-- Inside the Books section -->
+            <section id="books" class="section">
+                <h2>Books</h2>
+                <div class="books-list" id="books-list">
+                    <!-- Books content will be generated dynamically here -->
+                </div>
+            </section>
+
+            <section id="blog" class="section">
+                <h2>Blog</h2>
+                <p>Welcome to Albert Einstein's blog, where I share my thoughts and insights on the universe, science, and more.</p>
+                <ul>
+                    <li><a href="#post1">Blog Post 1</a></li>
+                    <li><a href="#post2">Blog Post 2</a></li>
+                    <li><a href="#post3">Blog Post 3</a></li>
+                    <li><a href="#post4">Blog Post 4</a></li>
+                </ul>
+                <!-- Blog posts here -->
+            </section>
+            
+            
+        </main>
+
+        <footer class="grid-item">
+            <!-- Footer content here -->
+        </footer>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
