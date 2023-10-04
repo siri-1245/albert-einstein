@@ -1,0 +1,28 @@
+{
+    "books": [
+        {
+            "id": 1,
+            "title": "The Quantum Enigma",
+            "year": 2022,
+            "published": true
+        },
+        {
+            "id": 2,
+            "title": "Exploring the Cosmos: A Journey Through Space and Time",
+            "year": 2019,
+            "published": true
+        },
+        {
+            "id": 3,
+            "title": "Einstein's Unfinished Symphony: The Quest for a Unified Theory",
+            "year": 2020,
+            "published": false
+        },
+        {
+            "id": 4,
+            "title": "The Art of Solitude: Einstein's Reflections on Life and Science",
+            "year": 2015,
+            "published": true
+        }
+    ]
+}
