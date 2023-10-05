@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Albert Einstein's Website</title>
+    <style>
+        /* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply a subtle color scheme */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "nav nav nav nav"
+        "header header header header"
+        "persona papers hobbies books"
+        "blog blog blog blog"
+        "footer footer footer footer";
+    grid-gap: 10px;
+}
+
+/* Styles for Navigation Bar */
+nav {
+    grid-area: nav;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Styles for Persona Section */
+.section {
+    background-color: #f0f0f0;
+    border: 2px solid #ccc;
+    padding: 20px;
+}
+
+#persona {
+    grid-area: persona;
+}
+
+#persona h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.persona-content {
+    display: flex;
+    align-items: center;
+}
+
+.persona-img {
+    max-width: 500px;
+    height: 200px;
+    display: block;
+    margin-top: 20px;
+}
+
+#persona {
+    grid-area: persona;
+    background-image: url('images/bg1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.persona-text {
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+/* Styles for Papers Section */
+#papers {
+    grid-area: papers;
+    background-color: #e6e6e6;
+    background-image: url('images/bg22.jpg');
+}
+
+#papers h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.papers-slideshow {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Add these styles to your existing CSS */
+/* Styles for previous and next buttons */
+.slideshow-controls button {
+    margin: 0 10px;
+    font-size: 16px;
+    color: #333;
+    background-color: wheat;
+    border: 2px solid #333;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.slideshow-controls button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Styles for individual papers */
+.paper {
+    text-align: center;
+    margin-right: 20px;
+    color: black;
+    font-size: 25px;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+/* Set fixed dimensions for the images within individual papers */
+.paper img {
+    max-width: 100%;
+    height: auto;
+    width: 250px;
+    height: 350px;
+}
+
+/* Center-align the previous and next buttons */
+.slideshow-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.slideshow-controls button {
+    margin: 0 10px;
+}
+
+/* Styles for Hobbies Section */
+#hobbies {
+    grid-area: hobbies;
+    background-color: #f9f9f9;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+/* For Regular (Non-Mobile) Version */
+/* For Regular (Non-Mobile) Version */
+@media (min-width: 601px) {
+    .image-collection-grid {
+        grid-template-columns: repeat(3, 1fr); /* Display 3 images in each row */
+    }
+
+    /* Adjust the width of individual image containers */
+    .image {
+        width: calc(33.33% - 20px); /* Calculate the width with spacing between images */
+        max-width: none; /* Remove the max-width for custom sizing */
+        height: auto; /* Allow the height to adjust automatically */
+    }
+
+    /* Adjust the width of the images inside the containers */
+    .image img {
+        max-width: 100%;
+        height: auto;
+        width: 100%; /* Make the image fill the container horizontally */
+    }
+}
+/* Styles for Image Collection Section */
+/* Styles for Image Collection Section */
+#image-collection {
+    grid-area: image-collection;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+#image-collection h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Default Styles for Desktop (Non-Mobile) Version */
+.image-collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+
+/* Adjust the style of individual image containers for desktop */
+.image {
+    border: 2px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: calc(33.33% - 20px); /* Distribute width for 3 columns with spacing */
+    height: auto;
+}
+
+/* Adjust the style of images inside the containers */
+.image img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+.image p {
+    margin-top: 10px;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    /* Display 2 images in each row for mobile version */
+    .image-collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px; /* Reduce the gap for mobile version */
+    }
+
+    /* Adjust the style of individual image containers for mobile */
+    .image {
+        width: calc(50% - 5px); /* Distribute width for 2 columns with spacing */
+    }
+}
+
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    /* Display 2 images in each row for mobile version */
+    .image-collection-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    /* Adjust the style of individual image containers for mobile */
+    .image {
+        width: calc(50% - 10px); /* Distribute width for 2 columns with spacing */
+    }
+}
+
+/* Default Styles for Desktop (Non-Mobile) Version */
+.image-collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Adjust the style of individual image containers for desktop */
+.image {
+    border: 2px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: calc(33.33% - 20px); /* Distribute width for 3 columns with spacing */
+    height: auto;
+}
+
+/* Adjust the style of images inside the containers */
+.image img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+.image p {
+    margin-top: 10px;
+}
+
+
+/* Adjust the style of individual image containers */
+.image {
+    border: 2px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: calc(33.33% - 20px); /* Distribute width for 3 columns with spacing */
+    height: auto;
+}
+
+/* Adjust the style of images inside the containers */
+.image img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+.image p {
+    margin-top: 10px;
+}
+
+
+
+#hobbies h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.hobbies-list {
+    list-style: none;
+    padding: 0;
+}
+
+.hobby {
+    border: 2px solid #ccc;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: black;
+    font-size: x-large;
+    font-family: cursive;
+    font-weight: bold;
+}
+
+.hobby p {
+    margin-bottom: 10px;
+}
+
+/* Style for hobby images */
+.hobby img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Add these styles to your existing CSS for hobby images */
+.hobbies-list img {
+    max-width: 150px;
+    height: auto;
+}
+
+/* Styles for Books Section */
+#books {
+    grid-area: books;
+    background-color: #e6e6e6;
+}
+
+#books h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+.books-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.book {
+    margin: 10px;
+    text-align: center;
+}
+
+.book img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Add this CSS to your existing styles for the .book img element */
+.book img {
+    max-width: 100px;
+    max-height: 150px;
+}
+
+/* Styles for Blog Section */
+#blog {
+    grid-area: blog;
+    background-color: #eaeaea;
+}
+
+#blog h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Footer Styles */
+footer {
+    grid-area: footer;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    /* Add your mobile-specific styles here */
+    /* For example, you can stack navigation links vertically */
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    /* For example, you can adjust the number of columns for hobbies and books */
+    #hobbies {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    #books {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* You can also adjust the number of images in a row for image collections */
+    .image-collection-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/* Styles for Image Collection Section */
+#image-collection {
+    grid-area: image-collection;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+#image-collection h2 {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Default Styles for Desktop (Non-Mobile) Version */
+.image-collection-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* Adjust the style of individual image containers for desktop */
+.image {
+    border: 2px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    width: calc(33.33% - 20px); /* Distribute width for 3 columns with spacing */
+    height: auto;
+}
+
+/* Adjust the style of images inside the containers */
+.image img {
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+.image p {
+    margin-top: 10px;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    /* Display 2 images in each row for mobile version */
+    .image-collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px; /* Adjust the gap for mobile version */
+    }
+
+    /* Adjust the style of individual image containers for mobile */
+    .image {
+        width: calc(50% - 10px); /* Distribute width for 2 columns with spacing */
+    }
+}
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    /* Display 2 books in each row for mobile version */
+    .books-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    /* Adjust the style of individual book containers for mobile */
+    .book {
+        width: calc(50% - 10px); /* Distribute width for 2 columns with spacing */
+    }
+}
+/* Media Query for Mobile Devices */
+@media (max-width: 600px) {
+    /* Display 2 books in each row for mobile version */
+    .books-list .book {
+        width: 50%;
+        margin: 0;
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <nav class="grid-item">
+            <ul>
+                <li><a href="#persona">Persona</a></li>
+                <li><a href="#papers">Papers</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#image-collection">Image Collection</a></li> 
+                <li><a href="#books">Books</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+
+        <header class="grid-item">
+            <!-- Navigation links here -->
+        </header>
+
+        <main class="grid-item">
+            <section id="persona" class="section">
+                <div class="persona-header">
+                    <h2>Persona</h2>
+                </div>
+                <div class="persona-content">
+                    <img src="images/ai.png" alt="Albert Einstein" class="persona-img">
+                    <div class="persona-text">
+                        <p>I am Albert Einstein, a humble physicist who embarked<br>
+                             on a lifelong journey to 
+                            unravel the mysteries of the universe <br>
+                            through mathematics and scientific inquiry.</p>
+                    </div>
+                </div>
+            </section>
+            
+            
+            
+
+            <!-- Inside the Papers section -->
+            <section id="papers" class="section">
+                <h2>Papers</h2>
+                <div class="papers-slideshow">
+                    <div class="paper">
+                        <img src="images/hungarian_fingerprints.jpg" alt="Paper 1">
+                        <p>HUNGARIAN FINGERPRINTS.</p>
+                    </div>
+                    <div class="paper">
+                        <img src="images/2.jpg" alt="Paper 2">
+                        <p>A THEORY OF THE FOUNDATIONS OF THERMODYNAMICS</p>
+                    </div>
+                    <!-- Add more paper divs as needed -->
+                    <div class="paper">
+                        <img src="images/3.jpg" alt="Paper 3">
+                        <p>ON THE GENERAL MOLECULAR THEORY OF HEAT</p>
+                    </div>
+                    <div class="paper">
+                        <img src="images/4_relativity.jpg" alt="Paper 4">
+                        <p>RELATIVITY - THE SPECIAL AND THE GENERAL THEORY</p>
+                    </div>
+                </div>
+                <div class="slideshow-controls">
+                    <button onclick="previousSlide()">Previous</button>
+                    <button onclick="nextSlide()">Next</button>
+                </div>
+            </section>
+
+            <!-- Inside the Hobbies section -->
+<section id="hobbies" class="section">
+    <h2>Hobbies<br>
+    
+    </h2>
+    <ul class="hobbies-list">
+       
+    
+        <li class="hobby">
+            <p>Puzzles</p>
+            <img src="images/puzzles.jpeg" alt="Puzzle Image">
+        </li>
+        <li class="hobby">
+            <p>Reading Books</p>
+            <img src="images/reading.jpg" alt="Reading Image">
+        </li>
+        <li class="hobby">
+            <p>Playing Violin</p>
+            <img src="images/violin.png" alt="Violin Image">
+        </li>
+        <!-- Add more hobbies as needed -->
+    </ul>
+</section>
+<!-- Inside the Image Collection section -->
+<section id="image-collection" class="section">
+    <h2>Image Collection</h2>
+    <div class="image-collection-grid">
+        <!-- Add images and captions here -->
+        <div class="image">
+            <img src="images/ic1.jpg" alt="Einstein Image 1">
+            <p></p>
+        </div>
+        <div class="image">
+            <img src="images/ic2.jpg" alt="Einstein Image 2">
+            <p></p>
+        </div>
+        <!-- Add two more images and captions below -->
+        <div class="image">
+            <img src="images/ic3.jpeg" alt="Einstein Image 3">
+            <p></p>
+        </div>
+        <div class="image">
+            <img src="images/ic4.png" alt="Einstein Image 4">
+            <p></p>
+        </div>
+        <div class="image">
+            <img src="images/ic5.jpg" alt="Einstein Image 5">
+            <p></p>
+        </div>
+        <div class="image">
+            <img src="images/ic6.jpg" alt="Einstein Image 6">
+            <p></p>
+        </div>
+        <!-- Add more images and captions as needed -->
+    </div>
+</section>
+
+
+
+
+            <!-- Inside the Books section -->
+            <section id="books" class="section">
+                <h2>Books</h2>
+                <div class="books-list" id="books-list">
+                    <!-- Books content will be generated dynamically here -->
+                </div>
+            </section>
+
+            <section id="blog" class="section">
+                <h2>Blog</h2>
+                <p>Welcome to my blog .</p>
+                <ul>
+                    <li><a href="#post1">Blog Post 1</a></li>
+                    <li><a href="#post2">Blog Post 2</a></li>
+                    <li><a href="#post3">Blog Post 3</a></li>
+                    <li><a href="#post4">Blog Post 4</a></li>
+                </ul>
+                <!-- Blog posts here -->
+            </section>
+            
+            
+        </main>
+
+        <footer class="grid-item">
+            <!-- Footer content here -->
+        </footer>
+        
+    </div>
+
+   <script>
+    let currentSlide = 0;
+const slides = document.querySelectorAll('.paper');
+
+function showSlide(slideIndex) {
+    if (slideIndex < 0) {
+        currentSlide = slides.length - 1;
+    } else if (slideIndex >= slides.length) {
+        currentSlide = 0;
+    }
+    
+    // Hide all slides initially
+    slides.forEach((slide) => {
+        slide.style.display = 'none';
+    });
+
+    // Display the current slide
+    slides[currentSlide].style.display = 'block';
+}
+
+function nextSlide() {
+    currentSlide++;
+    showSlide(currentSlide);
+}
+
+function previousSlide() {
+    currentSlide--;
+    showSlide(currentSlide);
+}
+
+showSlide(currentSlide); // Show the first slide initially
+ // Show the first slide initially
+
+// Function to fetch book data and create book elements
+function fetchBooksAndCreateList() {
+    const booksList = document.getElementById('books-list');
+    const image = 'images/ic1';
+    const api = 'https://siri-1245.github.io/albert-einstein/ai.json'; // Update with the actual API URL
+    const bookname = 'booktitle';
+    const imagePathPrefix = 'images/ic1/'; // Add your image path prefix here
+
+    fetch(api)
+        .then((response) => response.json())
+        .then((data) => {
+            const books = data.books.filter((book) => book.published);
+            books.forEach((book) => {
+                const bookElement = document.createElement('div');
+                bookElement.classList.add('book');
+                const pic = document.createElement('img');
+                pic.src = 'images/ic2.jpg'; // Concatenate the prefix with the book's image
+                bookElement.appendChild(pic);
+                const booktitle = document.createElement('div');
+                booktitle.classList.add(bookname);
+                booktitle.textContent = book.title;
+                bookElement.appendChild(booktitle);
+                booksList.appendChild(bookElement);
+            });
+        })
+        .catch((error) => console.error(error));
+}
+
+// Fetch books and create the list when the page loads
+fetchBooksAndCreateList();
+
+   </script>
+</body>
+</html>
